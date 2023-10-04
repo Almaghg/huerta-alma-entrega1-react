@@ -1,7 +1,11 @@
 
 /* import './App.css'; */
-import Navbar from './components/NavBar';
-import ListContainer from './components/ItemListContainer';
+import {useEffect, useState} from 'react';
+import Navbar from './components/layout/NavBar';
+import ListContainer from './components/containers/ItemListContainer';
+import ItemContainer from './components/containers/ItemContainer'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import ItemCount from './components/containers/ItemCount';
 
 function App() {
   return (
@@ -9,7 +13,11 @@ function App() {
       <header className="App-header">
         <Navbar/>
       </header>
-      <ListContainer greetings = "Hola!!!" />
+      <ListContainer greetings = "Menú" />
+      <ItemContainer/>
+      <ItemContainer/>
+      <ItemContainer/>
+      <ItemCount/>
     </div>
   );
 }

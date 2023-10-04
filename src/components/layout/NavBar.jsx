@@ -5,7 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
-function CollapsibleExample() {
+function NavbarComponent() {
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
       <Container>
@@ -23,12 +23,12 @@ function CollapsibleExample() {
               <NavDropdown.Item href="#action/3.3">Vegetariano</NavDropdown.Item>
               <NavDropdown.Divider />
             </NavDropdown>
-            <CartWidget/> {/* //No funciona :'( */}
-          </Nav>      
+          </Nav> 
+          <CartWidget/>     
         </Navbar.Collapse>
       </Container>
     </Navbar>
   );
 }
 
-export default CollapsibleExample;
+export default NavbarComponent;
