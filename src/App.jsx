@@ -5,19 +5,21 @@ import Navbar from './components/layout/NavBar';
 import ListContainer from './components/containers/ItemListContainer';
 import ItemContainer from './components/containers/ItemContainer'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ItemCount from './components/containers/ItemCount';
+import ItemDetailContainer from './components/containers/ItemDetailContainer'
+import { BrowserRouter, Routes } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Navbar/>
-      </header>
-      <ListContainer greetings = "Menú" />
-      <ItemContainer/>
-      <ItemContainer/>
-      <ItemContainer/>
-      <ItemCount/>
+      <BrowserRouter>
+      <Navbar/>
+      <Routes>
+      <Route path='/' element={<ItemListContainer/>}/>
+      <Route path='/tipo/:tipoId' element={<ItemDetailContainer/>}/>
+      <Route path='/item/:itemId' element={<ItemDetailContainer/>}/>
+      <Route path='*' element={<h1>404 NOT FOUND</h1>}/>
+      </Routes>
+    </BrowserRouter>
     </div>
   );
 }

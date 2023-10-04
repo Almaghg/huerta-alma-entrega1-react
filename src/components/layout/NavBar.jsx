@@ -1,13 +1,12 @@
 import React from 'react';
 import CartWidget from './CartWidget';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import {Container, Nav, Navbar, NavDropdown} from 'react-bootstrap';
+import {NavLink, Link} from 'react-router-dom'
 
 function NavbarComponent() {
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+      <Link to='/'></Link>
       <Container>
         <Navbar.Brand href="#home">Lula Calula</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -16,11 +15,10 @@ function NavbarComponent() {
             <Nav.Link href="#features">Inicio</Nav.Link>
             <Nav.Link href="#pricing">Nosotros</Nav.Link>
             <NavDropdown title="Menú" id="collapsible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Guisos</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Guarniciones
+              <NavDropdown.Item> <NavLink to={`/tipo/guisos`} className={({isActive})} => isActive ? 'ActiveOption' : 'Option'} > Guisos </NavLink></NavDropdown.Item>
+              <NavDropdown.Item><NavLink to={`/tipo/guarniciones`} className={({isActive})} => isActive ? 'ActiveOption' : 'Option'} > Guarniciones </NavLink>
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Vegetariano</NavDropdown.Item>
+              <NavDropdown.Item><NavLink to={`/tipo/vegetariano`} className={({isActive})} => isActive ? 'ActiveOption' : 'Option'} >Vegetariano</NavDropdown.Item>
               <NavDropdown.Divider />
             </NavDropdown>
           </Nav> 

@@ -1,16 +1,35 @@
 import React from 'react';
-import ItemCount from './ItemCount';
 import ItemContainer from './ItemContainer'; 
-/* import {useEffect} from 'react'; */
+import {useState, useEffect} from 'react';
+import {getPtoducts} from '../../products'
 
-export const ListContainer = (props) =>{
+import {useParams} from 'react-router-dom'
 
-    const { greetings } = props;
+export const ListContainer = ({greetings}) =>{
+    const [products, setProducts] = useState ([])
+
+    const {tipoId} = useParams()
+
+    useEffect (() => {
+
+    const asyncFunc = tipoId ? getProductsByTipo: getPtoductsProducts
+
+        asyncFunc(tipoId)
+            .then(response => {
+                setProducts(response)
+            })
+            .catch(error => {
+                console.error(error)
+            })
+    }, [])
+
     return (
-       <h1>{greetings}</h1>
+        <div>
+        <h1>{greetings}</h1>
+        <Itemlist products={products}/>
+        </div>
     )
 
 }
-
 
 export default ListContainer;

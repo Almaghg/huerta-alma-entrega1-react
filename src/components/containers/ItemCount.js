@@ -1,21 +1,27 @@
 import React, { useState } from 'react';
 
-function ItemCount() {
-  const [count, setCount] = useState(0);
+const ItemCount = ({stock, initial, onAdd}) => {
+  const [quantity, setQuantity] = useState(initial);
 
-  const handleIncrement = () => {
-    setCount(count + 1);
-  };
+  const Increment = () => {
+    if(quantity < stock) {
+      setQuantity(quantity + 1)
+    }
+  }
 
-  const handleReset = () => {
-    setCount(0);
+  const Decrement = () => {
+    if(quantity > 1) { 
+      setQuantity(quantity - 1);
+    }
   };
 
   return (
-    <div>
-      <h1>Counter: {count}</h1>
-      <button onClick={handleIncrement}>Increment</button>
-      <button onClick={handleReset}>Reset</button>
+    <div className='Counter'>
+      <div>
+      <button className='Button' onClick={Decrement}>-</button>
+      <h1 className='Number'> {quantity}</h1>
+      <button className='Button' onClick={Increment}>+</button>
+      </div>
     </div>
   );
 }
