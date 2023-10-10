@@ -1,11 +1,13 @@
 import ItemContainer from './ItemContainer'
 
 
-const ItemList = ({products}) => {
+export const ItemList = ({ products }) => {
     return (
-        <div className='ListGroup'/>
-        {products.map(prod => <ItemContainer key={prod.nombre}{...prod}/>)}
-    )
-}
+      <div className='ListGroup'>
+        {products.map(prod => <ItemContainer key={prod.nombre} {...prod} />)}
+      </div>
+    );
+  };
+  
 
-export default ItemList
+export default ItemList;

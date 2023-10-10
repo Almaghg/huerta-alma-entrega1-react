@@ -3,21 +3,21 @@ const products = [
         nombre:'Tinga de pollo',
         tipo: 'Guiso',
         precio: '75',
-        img: ''
+        img: '',
         id: '1',
       },
       {
         nombre:'Arroz a la jardinera',
         tipo: 'Guarnición',
         precio: '55',
-        img: ''
+        img: '',
         id: '2',
       },
       {
         nombre:'Guisado de garbanzo',
         tipo: 'Vegetariano',
         precio: '75',
-        img: ''
+        img: '',
         id: '3',
       }
     ]

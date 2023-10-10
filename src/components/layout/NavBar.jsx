@@ -15,10 +15,11 @@ function NavbarComponent() {
             <Nav.Link href="#features">Inicio</Nav.Link>
             <Nav.Link href="#pricing">Nosotros</Nav.Link>
             <NavDropdown title="Menú" id="collapsible-nav-dropdown">
-              <NavDropdown.Item> <NavLink to={`/tipo/guisos`} className={({isActive})} => isActive ? 'ActiveOption' : 'Option'} > Guisos </NavLink></NavDropdown.Item>
-              <NavDropdown.Item><NavLink to={`/tipo/guarniciones`} className={({isActive})} => isActive ? 'ActiveOption' : 'Option'} > Guarniciones </NavLink>
+              <NavDropdown.Item> <NavLink to={`/tipo/guisos`} className={isActive ? 'ActiveOption' : 'Option'} > Guisos </NavLink></NavDropdown.Item>
+              <NavDropdown.Item><NavLink to={`/tipo/guarniciones`} className={isActive ? 'ActiveOption' : 'Option'} > Guarniciones </NavLink>
               </NavDropdown.Item>
-              <NavDropdown.Item><NavLink to={`/tipo/vegetariano`} className={({isActive})} => isActive ? 'ActiveOption' : 'Option'} >Vegetariano</NavDropdown.Item>
+              <NavDropdown.Item><NavLink to={`/tipo/vegetariano`} className={isActive ? 'ActiveOption' : 'Option'} > Vegetariano </NavLink>
+              </NavDropdown.Item>
               <NavDropdown.Divider />
             </NavDropdown>
           </Nav> 

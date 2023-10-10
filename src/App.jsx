@@ -2,11 +2,10 @@
 /* import './App.css'; */
 import {useEffect, useState} from 'react';
 import Navbar from './components/layout/NavBar';
-import ListContainer from './components/containers/ItemListContainer';
-import ItemContainer from './components/containers/ItemContainer'
+import ItemDetailContainer from './components/containers/ItemDetailContainer';
+import ItemListContainer from './components/containers/ItemListContainer'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ItemDetailContainer from './components/containers/ItemDetailContainer'
-import { BrowserRouter, Routes } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (

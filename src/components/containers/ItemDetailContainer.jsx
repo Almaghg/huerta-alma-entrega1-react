@@ -9,9 +9,9 @@ export const ItemDetailContainer = () =>{
     const {ItemId} = useParams()
 
     useEffect (() => {
-        getPtoductsById(ItemId)
+        getPtoductById(ItemId)
             .then(response => {
-                setProducts(response)
+                setProduct(response)
             })
             .catch(error => {
                 console.error(error)

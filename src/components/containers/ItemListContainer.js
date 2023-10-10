@@ -1,7 +1,8 @@
 import React from 'react';
 import ItemContainer from './ItemContainer'; 
 import {useState, useEffect} from 'react';
-import {getPtoducts} from '../../products'
+import {getPtoducts} from '../../products';
+import ItemList from './ItemList';
 
 import {useParams} from 'react-router-dom'
 
@@ -12,7 +13,7 @@ export const ListContainer = ({greetings}) =>{
 
     useEffect (() => {
 
-    const asyncFunc = tipoId ? getProductsByTipo: getPtoductsProducts
+    const asyncFunc = tipoId ? getProductByTipo: getProductProduct
 
         asyncFunc(tipoId)
             .then(response => {
