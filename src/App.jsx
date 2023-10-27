@@ -1,27 +1,33 @@
-
-/* import './App.css'; */
-import {useEffect, useState} from 'react';
-import Navbar from './components/layout/NavBar';
-import ItemDetailContainer from './components/containers/ItemDetailContainer';
-import ItemListContainer from './components/containers/ItemListContainer'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ItemDetailContainer from "./components/ItemDetailContainer";
+import ItemListContainer from "./components/ItemListContainer";
+import Navbar from "./components/Navbar";
+import "./main.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { CartProvider } from "./context/CartContext";
+import Carrito from "./components/Carrito";
+import Checkout from "./components/Checkout";
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-      <Navbar/>
-      <Routes>
-      <Route path='/' element={<ItemListContainer/>}/>
-      <Route path='/tipo/:tipoId' element={<ItemDetailContainer/>}/>
-      <Route path='/item/:itemId' element={<ItemDetailContainer/>}/>
-      <Route path='*' element={<h1>404 NOT FOUND</h1>}/>
-      </Routes>
-    </BrowserRouter>
+    <div>
+      <CartProvider>
+        <BrowserRouter>
+
+          <Navbar/>
+
+          <Routes>
+            <Route path="/" element={<ItemListContainer />} />
+            <Route path="/item/:id" element={<ItemDetailContainer />}/>
+            <Route path="/productos" element={<ItemListContainer />} />
+            <Route path="/productos/:categoria" element={<ItemListContainer />} />
+            <Route path="/carrito" element={<Carrito />}/>
+            <Route path="/checkout" element={<Checkout />}/>
+          </Routes>
+          
+        </BrowserRouter>
+      </CartProvider>
     </div>
   );
 }
-
 
 export default App;
