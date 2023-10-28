@@ -7,14 +7,14 @@ function NavbarComponent() {
   return (
     <Navbar collapseOnSelect expand="lg" className="navegacion">
       <Link to='/'></Link>
-      <Container>
+      <Container className='navegacion'>
       <Navbar.Brand><Link to="/" className="logo"><h3>Lula Calula</h3></Link></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link><Link className="menu-link" to="/">Inicio</Link></Nav.Link>
-            <Nav.Link><Link className="menu-link" to="/productos">Productos</Link></Nav.Link>
-            <NavDropdown title="Menú" id="collapsible-nav-dropdown">
+            <Nav.Link><Link className="nav-option" to="/">Inicio</Link></Nav.Link>
+            <Nav.Link><Link className="nav-option" to="/productos">Productos</Link></Nav.Link>
+            <NavDropdown title="Menú" id="collapsible-nav-dropdown" className="nav-option">
               <NavDropdown.Item><Link className="menu-link" to="/productos/guiso">Guisos</Link></NavDropdown.Item>
               <NavDropdown.Item><Link className="menu-link" to="/productos/guarnicion">Guarniciones</Link>
               </NavDropdown.Item>

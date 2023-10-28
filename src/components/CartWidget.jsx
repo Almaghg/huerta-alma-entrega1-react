@@ -8,7 +8,7 @@ const CartWidget = () => {
 
   return (
     <div>
-        <Link className="menu-link d-flex align-items-center justify-content-space-btween" to="/carrito">
+        <Link className="nav-link d-flex align-items-center justify-content-space-btween" to="/carrito">
         <i className="bi bi-basket2-fill"></i>
         <span className="numerito">{cantidadEnCarrito()}</span>
         </Link>

@@ -3,6 +3,7 @@ import { CartContext } from '../context/CartContext';
 import { useForm } from 'react-hook-form';
 import { collection, addDoc } from "firebase/firestore";
 import { db } from '../firebase/config';
+import Swal from 'sweetalert2'
 
 const Checkout = () => {
 
@@ -32,12 +33,13 @@ const Checkout = () => {
     }
 
     if (pedidoId) {
-        return (
-            <div className="container">
-                <h1 className="main-title">Gracias por tu compra</h1>
-                <p>El folio de tu pedido es: {pedidoId}</p>
-            </div>
-        )
+
+        Swal.fire({
+            title: 'Gracias por tu compra',
+            html: `<p>El folio de tu pedido es: ${pedidoId}</p>`,
+            icon: 'success',
+            showConfirmButton: true  
+          });
     }
 
   return (
